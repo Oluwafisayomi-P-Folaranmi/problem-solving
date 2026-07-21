@@ -77,7 +77,7 @@ public class SinglyLinkedList<E> {
         }
         else {
             newNode = new Node<E>(element, head);
-            tail = newNode;
+            head = newNode;
             size++;
         }
     }
@@ -87,6 +87,7 @@ public class SinglyLinkedList<E> {
         Node<E> newNode = new Node<>(element, null);
         if (isEmpty()) {
             head = newNode;
+            tail = newNode;
             size++;
         }
         else {
@@ -98,15 +99,18 @@ public class SinglyLinkedList<E> {
 
     // removeFirst
     public E removeFirst() {
-        if (isEmpty()) {
-            return null;
+        if (!isEmpty()) {
+            Node<E> old = head;
+            head = head.getNext();
+            size--;
+
+            if (isEmpty()) {
+                tail = null;
+            }
+
+            return old.getElement();
         }
-        E e = head.getElement();
-        head = head.getNext();
-        size--;
-        if (isEmpty()) {
-            tail = null;
-        }
-        return e;
+
+        return null;
     }
 }
