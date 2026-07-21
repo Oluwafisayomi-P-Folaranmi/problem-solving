@@ -1,4 +1,4 @@
-package SinglyLinkedList;
+package Stack;
 
 public class SinglyLinkedList<E> {
 
