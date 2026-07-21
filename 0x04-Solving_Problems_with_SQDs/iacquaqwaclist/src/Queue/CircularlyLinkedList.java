@@ -1,4 +1,4 @@
-package CircularlyLinkedList;
+package Queue;
 
 public class CircularlyLinkedList<E> {
 
